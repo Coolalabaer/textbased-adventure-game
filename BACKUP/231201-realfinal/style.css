@@ -1,0 +1,174 @@
+:root {
+    --dark: #181818;
+    --mid-dark: #252525;
+    --mid: #404040;
+    --mid-hover: #555555;
+    --light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font: 14px sans-serif;
+    position: relative;
+}
+
+html {
+    overflow: hidden;
+}
+
+main {
+    height: 90vh;
+    padding: 5vh;
+
+    background: var(--dark);
+    color: var(--light);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+a {color: yellow;}
+
+#topBtns {
+    grid-area: 1 / 1 / 2 / 9;
+    display: flex;
+    gap: 10px;
+}
+
+#txtSctn {
+    grid-area: 3 / 1 / 11 / 9;
+    overflow-y: hidden;
+}
+
+#txtSctn li {
+    margin-bottom: 25px;
+}
+
+
+#txtSctn li:nth-of-type(1) {opacity: 1;}
+#txtSctn li:nth-of-type(2) {opacity: .5;}
+#txtSctn li:nth-of-type(3) {opacity: .4;}
+#txtSctn li:nth-of-type(4) {opacity: .3;}
+#txtSctn li:nth-of-type(5) {opacity: .2;}
+#txtSctn li:nth-of-type(6) {opacity: .1;}
+#txtSctn li:nth-of-type(n+7) {display: none;}
+
+#btmBtns {
+    grid-area: 12 / 1 / 13 / 9;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#btmBtns button:nth-of-type(1) {
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+#btmBtns button:nth-of-type(2) {
+    grid-area: 1 / 5 / 2 / 9;
+}
+
+#btmBtns button:nth-of-type(3) {
+    grid-area: 1 / 9 / 2 / 13;
+}
+
+#btmBtns button:nth-of-type(4) {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+#btmBtns button:nth-of-type(5) {
+    grid-area: 2 / 4 / 3 / 7;
+}
+
+#btmBtns button:nth-of-type(6) {
+    grid-area: 2 / 7 / 3 / 10;
+}
+
+#btmBtns button:nth-of-type(7) {
+    grid-area: 2 / 10 / 3 / 13;
+}
+
+#iconSctn {
+    grid-area: 1 / 10 / 3 / 12;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.iconCtn {position: relative;}
+
+#iconSctn svg {
+    height: 50px;
+    width: 100%;
+    z-index: 1;  
+    fill: var(--dark);
+}
+
+.iconBg {
+    height: 50px;
+    aspect-ratio: 576 / 512;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#inventory {
+    grid-area: 3 / 10 / 13 / 12;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+#inventory {
+    width: 100%;
+}
+
+#inventory {
+    background: var(--mid);
+    display: block;
+
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+/* Classes ---------------------------------------------------------------------------- */
+.activeButton {
+    background: var(--mid);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.activeButton:hover {
+    background: var(--mid-hover);
+}
+
+.inactiveButton {
+    background: var(--mid-dark);
+    color: var(--mid);
+    cursor: none;
+    pointer-events: none;
+}
+
+.unactivatedButton {
+    border: 1px solid var(--mid-dark);
+    background: transparent;
+    color: transparent;
+    cursor: none;
+    pointer-events: none;
+}
